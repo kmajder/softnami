@@ -12,7 +12,7 @@ WORKDIR /app
 
 # Instalacja zależności na podstawie preferowanych package manager
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm ci --include=dev
 
 # Rebuild źródła aplikacji
 FROM base AS builder
