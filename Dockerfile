@@ -1,6 +1,9 @@
 # Dockerfile dla aplikacji Next.js
 FROM node:18-alpine AS base
 
+# Build arguments
+ARG NODE_ENV=production
+
 # Instalacja zależności tylko gdy są potrzebne
 FROM base AS deps
 # Sprawdź https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine aby zrozumieć dlaczego libc6-compat może być potrzebne.
@@ -27,6 +30,9 @@ WORKDIR /app
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+# Instalacja curl dla health check
+RUN apk add --no-cache curl
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs

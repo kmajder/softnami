@@ -3,7 +3,12 @@ version: '3.8'
 services:
   # Aplikacja Next.js
   app:
-    image: softnami-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=production
+    container_name: softnami-app
     restart: unless-stopped
     environment:
       - NODE_ENV=production

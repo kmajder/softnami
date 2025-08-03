@@ -22,6 +22,19 @@ backend/
 
 ### 1. Przygotowanie środowiska
 
+### 2. Budowanie obrazu (opcjonalne)
+
+```bash
+# Budowanie obrazu aplikacji
+docker-compose build
+
+# Lub budowanie konkretnego serwisu
+docker-compose build app
+
+# Budowanie z cache
+docker-compose build --no-cache
+```
+
 ```bash
 # Skopiuj zmienne środowiskowe
 cp .env.example .env
@@ -30,7 +43,7 @@ cp .env.example .env
 nano .env
 ```
 
-### 2. Przygotowanie certyfikatów SSL
+### 3. Przygotowanie certyfikatów SSL
 
 ```bash
 # Utwórz certyfikaty SSL (dla development)
@@ -41,10 +54,13 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
   -subj "/C=PL/ST=Warszawa/L=Warszawa/O=Softnami/CN=softnami.pl"
 ```
 
-### 3. Uruchomienie aplikacji
+### 4. Uruchomienie aplikacji
 
 ```bash
-# Budowanie i uruchomienie
+# Budowanie i uruchomienie (buduje obraz automatycznie)
+docker-compose up -d
+
+# Lub z wymuszeniem przebudowania
 docker-compose up -d --build
 
 # Sprawdzenie statusu
@@ -69,6 +85,11 @@ NODE_ENV=production
 # Next.js Configuration
 NEXT_TELEMETRY_DISABLED=1
 ```
+
+### Build Arguments
+
+Docker Compose automatycznie buduje obraz z następującymi argumentami:
+- `NODE_ENV=production` - środowisko produkcyjne
 
 ### Porty
 
