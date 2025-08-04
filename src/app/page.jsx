@@ -5,6 +5,14 @@ import './globals.css';
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [contactFormData, setContactFormData] = useState({
+    companyName: '',
+    email: '',
+    websiteType: '',
+    description: ''
+  });
+  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
+  const [contactMessage, setContactMessage] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +65,57 @@ function App() {
       console.error('Error:', error);
       alert('Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.');
     }
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setIsContactSubmitting(true);
+    setContactMessage('');
+
+    const data = {
+      companyName: contactFormData.companyName,
+      name: contactFormData.companyName, // Używamy nazwy firmy jako imienia
+      email: contactFormData.email,
+      phone: '', // Nie mamy pola telefonu w formularzu kontaktowym
+      projectDescription: `Typ strony: ${contactFormData.websiteType}\n\nOpis: ${contactFormData.description}`
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setContactMessage('✅ Dziękujemy za wiadomość! Skontaktujemy się z Tobą w ciągu 24 godzin.');
+        setContactFormData({
+          companyName: '',
+          email: '',
+          websiteType: '',
+          description: ''
+        });
+      } else {
+        setContactMessage(`❌ ${result.message}`);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setContactMessage('❌ Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.');
+    } finally {
+      setIsContactSubmitting(false);
+    }
+  };
+
+  const handleContactInputChange = (e) => {
+    const { name, value } = e.target;
+    setContactFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
@@ -303,20 +362,57 @@ function App() {
               </div>
             </div>
             <div className="contact-form">
-              <form>
+              <form onSubmit={handleContactSubmit}>
                 <div className="form-group">
-                  <input type="text" placeholder="Nazwa Firmy" required />
+                  <input 
+                    type="text" 
+                    name="companyName"
+                    placeholder="Nazwa Firmy" 
+                    value={contactFormData.companyName}
+                    onChange={handleContactInputChange}
+                    required 
+                  />
                 </div>
                 <div className="form-group">
-                  <input type="email" placeholder="Twój Email" required />
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Twój Email" 
+                    value={contactFormData.email}
+                    onChange={handleContactInputChange}
+                    required 
+                  />
                 </div>
                 <div className="form-group">
-                  <input type="text" placeholder="Typ Strony (firmowa/blog)" />
+                  <input 
+                    type="text" 
+                    name="websiteType"
+                    placeholder="Typ Strony (firmowa/blog)" 
+                    value={contactFormData.websiteType}
+                    onChange={handleContactInputChange}
+                  />
                 </div>
                 <div className="form-group">
-                  <textarea placeholder="Opowiedz nam o swoim biznesie i potrzebach..." rows="5"></textarea>
+                  <textarea 
+                    name="description"
+                    placeholder="Opowiedz nam o swoim biznesie i potrzebach..." 
+                    rows="5"
+                    value={contactFormData.description}
+                    onChange={handleContactInputChange}
+                  ></textarea>
                 </div>
-                <button type="submit" className="btn-primary">Wyślij Zapytanie</button>
+                {contactMessage && (
+                  <div className={`contact-message ${contactMessage.includes('✅') ? 'success' : 'error'}`}>
+                    {contactMessage}
+                  </div>
+                )}
+                <button 
+                  type="submit" 
+                  className="btn-primary" 
+                  disabled={isContactSubmitting}
+                >
+                  {isContactSubmitting ? 'Wysyłanie...' : 'Wyślij Zapytanie'}
+                </button>
               </form>
             </div>
           </div>
