@@ -151,7 +151,7 @@ function App() {
             </p>
             <div className="price-cta">
               <div className="price-tag">
-                <span className="price">Już od 2499 zł</span>
+                <span className="price">Już od 1890 zł</span>
                 <span className="price-subtitle">Strona firmowa z hostingiem</span>
               </div>
               <button className="btn-primary" onClick={openModal}>
