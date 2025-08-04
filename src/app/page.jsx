@@ -87,7 +87,7 @@ function App() {
               Dla Twojej Firmy
             </h1>
             <p className="hero-subtitle">
-              Tworzymy nowoczesne, responsywne strony internetowe dla małych firm i startupów. 
+              Tworzymy nowoczesne, responsywne strony internetowe dla firm i startupów. 
               Pomagamy przedsiębiorcom zaistnieć w internecie i przyciągnąć nowych klientów.
             </p>
             <div className="price-cta">
@@ -101,21 +101,21 @@ function App() {
             </div>
           </div>
           <div className="hero-visual">
-  <div className="floating-elements">
-    <div className="floating-card card-1">
-      <div className="card-icon">💻</div>
-      <span>Nowoczesne strony dla biznesu</span>
-    </div>
-    <div className="floating-card card-2">
-      <div className="card-icon">🚀</div>
-      <span>Szybkość & optymalizacja</span>
-    </div>
-    <div className="floating-card card-3">
-      <div className="card-icon">📱</div>
-      <span>Responsywność & UX</span>
-    </div>
+          <div className="floating-elements">
+  <div className="floating-card card-1">
+    <div className="card-icon">📩</div>
+    <span>Formularze kontaktowe</span>
+  </div>
+  <div className="floating-card card-2">
+    <div className="card-icon">🔔</div>
+    <span>Powiadomienia od klientów</span>
+  </div>
+  <div className="floating-card card-3">
+    <div className="card-icon">🧩</div>
+    <span>Aplikacje dla Twojej firmy</span>
   </div>
 </div>
+      </div>
         </div>
         <div className="scroll-indicator">
           <div className="scroll-arrow"></div>
@@ -168,7 +168,7 @@ function App() {
         <div className="container">
           <div className="section-header">
             <h2>Co Oferujemy</h2>
-            <p>Profesjonalne strony internetowe dla małych firm</p>
+            <p>Profesjonalne strony internetowe dla firm</p>
           </div>
           <div className="services-grid">
             <div className="service-card">
@@ -236,12 +236,6 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="no-worries-visual">
-              <div className="relax-illustration">
-                <div className="relax-icon">💼</div>
-                <div className="relax-text">Skup się na biznesie, technologię zostaw nam!</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -253,7 +247,7 @@ function App() {
             <div className="about-text">
               <h2>Dlaczego Softnami?</h2>
               <p>
-                Specjalizujemy się w tworzeniu profesjonalnych stron internetowych dla małych firm. 
+                Specjalizujemy się w tworzeniu profesjonalnych stron internetowych dla firm. 
                 Rozumiemy, że każda złotówka ma znaczenie, dlatego oferujemy wysokiej jakości 
                 strony w przystępnych cenach, bez ukrytych kosztów.
               </p>
@@ -335,7 +329,7 @@ function App() {
           <div className="footer-content">
             <div className="footer-section">
               <h3>Softnami</h3>
-              <p>Tworzymy profesjonalne strony internetowe dla małych firm.</p>
+              <p>Tworzymy profesjonalne strony internetowe dla firm.</p>
             </div>
             <div className="footer-section">
               <h4>Usługi</h4>

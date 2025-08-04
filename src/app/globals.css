@@ -1191,12 +1191,12 @@ body {
   }
   
   .floating-card:nth-child(2) {
-    top: 40%;
+    top: 2%;
     right: 2%;
   }
   
   .floating-card:nth-child(3) {
-    bottom: 5%;
-    left: 30%;
+    bottom: 30%;
+    left: 33%;
   }
 }

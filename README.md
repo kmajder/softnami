@@ -31,8 +31,8 @@ backend/
 2. **Skonfiguruj dane email (opcjonalnie):**
    Utwórz plik `.env.local` w folderze `backend` z następującą zawartością:
    ```
-   EMAIL_USER=twoj.email@gmail.com
-   EMAIL_PASS=twoje_haslo_aplikacji_gmail
+   EMAIL_USER=kontakt@softnami.pl
+   EMAIL_PASS=twoje_haslo_email_ovh
    ```
 
 3. **Uruchom projekt:**
@@ -43,20 +43,20 @@ backend/
 4. **Otwórz przeglądarkę:**
    Przejdź do `http://localhost:3000`
 
-## Konfiguracja Email (Gmail)
+## Konfiguracja Email (OVH)
 
-Aby wysyłanie maili działało poprawnie:
+Aby wysyłanie maili działało poprawnie z OVH:
 
-1. **Włącz uwierzytelnianie dwuskładnikowe** w swoim koncie Gmail
-2. **Wygeneruj hasło aplikacji:**
-   - Przejdź do Ustawienia Google Account
-   - Bezpieczeństwo → Hasła aplikacji
-   - Wygeneruj nowe hasło dla "Mail"
-3. **Dodaj dane do `.env.local`:**
+1. **Zaloguj się do panelu OVH** i przejdź do sekcji Email
+2. **Skonfiguruj email dla domeny softnami.pl**
+3. **Ustaw hasło dla konta email** w panelu OVH
+4. **Dodaj dane do `.env.local`:**
    ```
-   EMAIL_USER=twoj.email@gmail.com
-   EMAIL_PASS=wygenerowane_haslo_aplikacji
+   EMAIL_USER=kontakt@softnami.pl
+   EMAIL_PASS=twoje_haslo_email_ovh
    ```
+
+**Uwaga:** Używamy SMTP OVH (`smtp.mail.ovh.net`) na porcie 587 z TLS.
 
 ## Funkcjonalności
 
@@ -69,7 +69,7 @@ Aby wysyłanie maili działało poprawnie:
 ### Backend
 - API endpoint `/api/contact` do wysyłania maili
 - Walidacja danych formularza
-- Integracja z Gmail SMTP
+- Integracja z OVH SMTP
 - Obsługa błędów
 
 ## Technologie

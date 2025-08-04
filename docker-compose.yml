@@ -12,8 +12,8 @@ services:
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-      - EMAIL_USER=${EMAIL_USER:-twoj.email@gmail.com}
-      - EMAIL_PASS=${EMAIL_PASS:-twoje_haslo_aplikacji_gmail}
+      - EMAIL_USER=${EMAIL_USER:-kontakt@softnami.pl}
+      - EMAIL_PASS=${EMAIL_PASS:-twoje_haslo_email_ovh}
     networks:
       - softnami-network
     healthcheck:
