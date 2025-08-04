@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Softnami",
-  description: "Profesjonalne strony internetowe dla małych firm",
+  description: "Profesjonalne strony internetowe dla firm",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
