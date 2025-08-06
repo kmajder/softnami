@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import './globals.css';
+import SEOStructuredData from '../components/SEOStructuredData';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -129,6 +130,7 @@ function App() {
 
   return (
     <div className="App">
+      <SEOStructuredData />
       {/* Navigation */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
@@ -155,8 +157,8 @@ function App() {
               Dla Twojej Firmy
             </h1>
             <p className="hero-subtitle">
-              Tworzymy nowoczesne, responsywne strony internetowe dla firm i startupów. 
-              Pomagamy przedsiębiorcom zaistnieć w internecie i przyciągnąć nowych klientów.
+              Specjalizujemy się w tworzeniu responsywnych stron WWW dla małych i średnich firm. 
+              Oferujemy kompleksowe usługi web development oraz firmowe strony biznesowe.
             </p>
             <div className="price-cta">
               <div className="price-tag">
@@ -235,7 +237,7 @@ function App() {
       <section id="services" className="services">
         <div className="container">
           <div className="section-header">
-            <h2>Co Oferujemy</h2>
+            <h2>Nasze Usługi - Tworzenie Stron Internetowych dla Firm</h2>
             <p>Profesjonalne strony internetowe dla firm</p>
           </div>
           <div className="services-grid">
@@ -313,7 +315,7 @@ function App() {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2>Dlaczego Softnami?</h2>
+              <h2>Dlaczego Warto Wybrać Softnami? - Najlepsze Strony WWW dla Biznesu</h2>
               <p>
                 Specjalizujemy się w tworzeniu profesjonalnych stron internetowych dla firm. 
                 Rozumiemy, że każda złotówka ma znaczenie, dlatego oferujemy wysokiej jakości 
@@ -342,12 +344,48 @@ function App() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="faq">
+        <div className="container">
+          <div className="section-header">
+            <h2>Często Zadawane Pytania - Tworzenie Stron Internetowych</h2>
+            <p>Odpowiedzi na najczęstsze pytania dotyczące naszych usług</p>
+          </div>
+          <div className="faq-grid">
+            <div className="faq-item">
+              <h3>Ile kosztuje stworzenie strony internetowej dla firmy?</h3>
+              <p>Ceny zaczynają się od 1890 zł za profesjonalną stronę firmową z hostingiem. Koszt zależy od zakresu projektu i funkcjonalności.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Jak długo trwa tworzenie strony internetowej?</h3>
+              <p>Standardowa strona firmowa jest gotowa w ciągu 7-14 dni roboczych. Większe projekty mogą wymagać więcej czasu.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Czy strony są responsywne i dostosowane do telefonów?</h3>
+              <p>Tak, wszystkie nasze strony są w pełni responsywne i doskonale wyglądają na komputerach, tabletach i telefonach.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Jakie są dodatkowe koszty?</h3>
+              <p>Koszt roczny za utrzymanie strony to 299 zł i zawiera adres email firmowy w cenie, certyfikat SSL, oraz domenę.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Czy otrzymam darmowy projekt?</h3>
+              <p>Tak, zanim zapłacisz będziesz mógł zobaczyć jak strona wygląda na żywo, ocenisz czy odpowiada Twoim potrzebom.</p>
+            </div>
+            <div className="faq-item">
+              <h3>Czy mogę mieć firmowy adres e-mail?</h3>
+              <p>Oczywiście! Pomagamy w konfiguracji profesjonalnych adresów e-mail z Twoją domeną, np. kontakt@twojafirma.pl</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
           <div className="contact-content">
             <div className="contact-info">
-              <h2>Wynieś swój biznes na nowy poziom</h2>
+              <h2>Skontaktuj się z nami - Darmowy Projekt Strony Internetowej</h2>
               <p>
                 Masz pomysł na stronę internetową? Chcesz profesjonalnie zaprezentować swój biznes online? 
                 Skontaktuj się z nami - pomożemy Ci stworzyć profesjonalną stronę, 

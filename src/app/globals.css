@@ -839,6 +839,47 @@ body {
   font-weight: 500;
 }
 
+/* FAQ Section */
+.faq {
+  padding: 5rem 0;
+  background: #f8fafc;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.faq-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #007EA7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 126, 167, 0.15);
+}
+
+.faq-item h3 {
+  color: #003249;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.faq-item p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* Contact Section */
 .contact {
   padding: 100px 0;
@@ -1226,6 +1267,15 @@ body {
     flex-direction: column;
     gap: 0.5rem;
   }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .faq-item {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1271,6 +1321,14 @@ body {
     padding: 15px 5px;
     align-items: flex-start;
     padding-top: 80px;
+  }
+  
+  .faq-item {
+    padding: 1.2rem;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.1rem;
   }
   
   .modal-header h2 {
