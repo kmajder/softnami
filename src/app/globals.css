@@ -955,6 +955,51 @@ body {
   border: 1px solid #f5c6cb;
 }
 
+.policy-modal {
+  max-width: 700px;
+}
+
+.policy-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.policy-section {
+  margin-bottom: 2rem;
+}
+
+.policy-section h3 {
+  color: #003249;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #007EA7;
+  padding-bottom: 0.3rem;
+}
+
+.policy-section p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.policy-section ul {
+  color: #555;
+  line-height: 1.6;
+  margin-left: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.policy-section ul li {
+  margin-bottom: 0.3rem;
+}
+
+.policy-section strong {
+  color: #003249;
+  font-weight: 600;
+}
+
 /* Footer */
 .footer {
   background: #1a202c;
@@ -1026,6 +1071,24 @@ body {
   padding-top: 2rem;
   text-align: center;
   color: #a0aec0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.policy-link {
+  background: none;
+  border: none;
+  color: #a0aec0;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.policy-link:hover {
+  color: #007EA7;
 }
 
 /* Responsive Design */
@@ -1157,6 +1220,11 @@ body {
     left: 38%;
     max-width: 120px;
     font-size: 0.8rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 

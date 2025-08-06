@@ -5,6 +5,7 @@ import './globals.css';
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isPolicyModalOpen, setIsPolicyModalOpen] = useState(false);
   const [contactFormData, setContactFormData] = useState({
     companyName: '',
     email: '',
@@ -29,6 +30,14 @@ function App() {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const openPolicyModal = () => {
+    setIsPolicyModalOpen(true);
+  };
+
+  const closePolicyModal = () => {
+    setIsPolicyModalOpen(false);
   };
 
   const handleSubmit = async (e) => {
@@ -187,7 +196,7 @@ function App() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={closeModal}>×</button>
             <div className="modal-header">
-              <h2>Opowiedz nam o swoim projekcie</h2>
+              <h2>Opowiedz nam o swojej firmie</h2>
               <p>Wypełnij formularz, a my skontaktujemy się z Tobą w ciągu 24 godzin</p>
             </div>
             <form onSubmit={handleSubmit} className="modal-form">
@@ -444,9 +453,87 @@ function App() {
           </div>
           <div className="footer-bottom">
             <p>&copy; 2025  Softnami. Wszystkie prawa zastrzeżone.</p>
+            <button onClick={openPolicyModal} className="policy-link">
+              Polityka prywatności
+            </button>
           </div>
         </div>
       </footer>
+
+      {/* Policy Modal */}
+      {isPolicyModalOpen && (
+        <div className="modal-overlay" onClick={closePolicyModal}>
+          <div className="modal-content policy-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closePolicyModal}>×</button>
+            <div className="modal-header">
+              <h2>📄 Polityka prywatności</h2>
+            </div>
+            <div className="policy-content">
+              <div className="policy-section">
+                <h3>1. Administrator danych</h3>
+                <p>Administratorem Twoich danych osobowych jest:<br/>
+                <strong>Kacper Majder "Softnami"</strong><br/>
+                E-mail kontaktowy: kontakt@softnami.pl</p>
+              </div>
+
+              <div className="policy-section">
+                <h3>2. Jakie dane zbieramy i w jakim celu?</h3>
+                <p>Za pomocą formularza kontaktowego zbieramy następujące dane:</p>
+                <ul>
+                  <li>Nazwa firmy</li>
+                  <li>Twoje imię</li>
+                  <li>Adres e-mail</li>
+                  <li>Numer telefonu (opcjonalnie)</li>
+                  <li>Opis projektu</li>
+                </ul>
+                <p>Dane te są przetwarzane wyłącznie w celu odpowiedzi na Twoje zapytanie oraz ewentualnej dalszej korespondencji dotyczącej współpracy.</p>
+              </div>
+
+              <div className="policy-section">
+                <h3>3. Podstawa prawna przetwarzania</h3>
+                <p>Dane są przetwarzane zgodnie z art. 6 ust. 1 lit. b RODO – czyli w celu podjęcia działań przed zawarciem umowy, na żądanie osoby, której dane dotyczą.</p>
+              </div>
+
+              <div className="policy-section">
+                <h3>4. Komu przekazujemy dane?</h3>
+                <p>Dane nie są przekazywane żadnym podmiotom trzecim, z wyjątkiem:</p>
+                <ul>
+                  <li>firm hostingowych utrzymujących stronę i skrzynkę e-mail, na zasadzie powierzenia przetwarzania danych.</li>
+                </ul>
+                <p>Dane nie są przekazywane poza Europejski Obszar Gospodarczy (EOG).</p>
+              </div>
+
+              <div className="policy-section">
+                <h3>5. Jak długo przechowujemy dane?</h3>
+                <p>Dane będą przechowywane przez czas niezbędny do prowadzenia korespondencji oraz ewentualnej współpracy, jednak nie dłużej niż 12 miesięcy od ostatniego kontaktu.</p>
+              </div>
+
+              <div className="policy-section">
+                <h3>6. Jakie masz prawa?</h3>
+                <p>Masz prawo do:</p>
+                <ul>
+                  <li>dostępu do swoich danych,</li>
+                  <li>sprostowania danych,</li>
+                  <li>usunięcia danych,</li>
+                  <li>ograniczenia przetwarzania,</li>
+                  <li>wniesienia sprzeciwu,</li>
+                  <li>złożenia skargi do Prezesa Urzędu Ochrony Danych Osobowych.</li>
+                </ul>
+              </div>
+
+              <div className="policy-section">
+                <h3>7. Dobrowolność podania danych</h3>
+                <p>Podanie danych w formularzu jest dobrowolne, ale niezbędne do nawiązania kontaktu.</p>
+              </div>
+
+              <div className="policy-section">
+                <h3>8. Pliki cookies</h3>
+                <p>Strona może używać plików cookies wyłącznie w celach technicznych (np. poprawne działanie formularza). Nie korzystamy z narzędzi analitycznych ani marketingowych.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
