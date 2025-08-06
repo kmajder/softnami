@@ -438,7 +438,7 @@ function App() {
             <div className="footer-section">
               <h4>Social Media</h4>
               <div className="social-links">
-                <a href="#" className="social-link">Facebook</a>
+                <a href="https://www.facebook.com/profile.php?id=61578912487648" className="social-link">Facebook</a>
               </div>
             </div>
           </div>
